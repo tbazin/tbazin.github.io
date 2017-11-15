@@ -2,7 +2,8 @@
 
 ## Sliding window and BPTT
 
-### How to devise window size and rate of updates during training ([StackExchange: When to apply BPTT or update weights](https://stats.stackexchange.com/questions/219914/rnns-when-to-apply-bptt-and-or-update-weights/220111#220111))
+### How to devise window size and rate of updates during training
+Source: [StackExchange: When to apply BPTT or update weights](https://stats.stackexchange.com/questions/219914/rnns-when-to-apply-bptt-and-or-update-weights/220111#220111)
 
 > 1. Forward pass: Step through the next $k_1$ time steps, computing the input,
     hidden, and output states.
@@ -38,9 +39,10 @@ Setting $k_2$ too short can limit the temporal scale over which the network can
 learn.
 However, the network's memory isn't limited to $k_2$ time steps because the
 hidden units can store information beyond this period (e.g. see Mikolov 2012
-and [this post][1]).
+and [this post](https://stats.stackexchange.com/questions/167482/capturing-initial-patterns-when-using-truncated-backpropagation-through-time-rn)).
 
-### Memory capacity of a truncated RNN (https://stats.stackexchange.com/a/167800)
+### Memory capacity of a truncated RNN
+Source: https://stats.stackexchange.com/a/167800
 
 > Limiting the gradient during training is more like limiting the window over
 which your model can assimilate input features and hidden state with high
