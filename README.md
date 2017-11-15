@@ -1,3 +1,5 @@
-# T. Bazin's Scratchpad
+# T. Bazin's personal scratchpad
 
-Personal page holding quick notes and ideas
+A minimal blog top store (and make available) quick notes and ideas.
+
+Topics ranging from machine learning models to Unix programming and Google Cloud configuration.
