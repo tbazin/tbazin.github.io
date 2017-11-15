@@ -43,9 +43,11 @@ itself - trustable.
 
 ### Mounting drive
 
-Code available for formatting on this page: https://cloud.google.com/compute/docs/disks/add-persistent-disk
+Code available to format drive on this page: https://cloud.google.com/compute/docs/disks/add-persistent-disk
 
-Note: The code given on this Google page omits the creation of the `/mnt/disks`
+#### Properly creating the `/mnt/disks` folder
+
+The code given on this Google page omits the creation of the `/mnt/disks`
 folder, which could result in bugs regarding the file permissions.
 
 Code to properly create this folder and set the permissions:
