@@ -2,7 +2,7 @@
 
 ## Firewall rules
 
-Source: https://cloud.google.com/vpc/docs/firewalls#default_firewall_rules
+Source: [GCE Default firewall rules]
 
 Egress rules on instances meant for `deny` type of rules, since all outbound
 traffic is enabled by default on GCE instances:
@@ -21,6 +21,8 @@ Allowing all egress traffic by default is apparently common practice on
 servers, under the assumption that the code running on the server is - to
 itself - trustable.
 
+[GCE Default firewall rules]: https://cloud.google.com/vpc/docs/firewalls#default_firewall_rules
+
 ## Drives and instances
 
 *Information given by Nicola Montecchio.*
@@ -29,10 +31,10 @@ itself - trustable.
 * GPU instances cost a lot, _even when idle_, so **turn them off
     as often as possible**
 * On throughput:
-    - **Much** higher throughput on _large_ drives, thus it is more
-        efficient to create the instance with a _small internal drive_ **AND**
-        create a (_possibly shared_) large SSD (e.g. 400Gb) and mount it on the
-        instance.
+    - **Much** higher throughput ([On GCE disk performance]) on _large_ drives,
+        thus it is more efficient to create the instance with a _small internal
+        drive_ **AND** create a (_possibly shared_) large SSD (e.g. 400Gb) and
+        mount it on the instance.
     - in that case the drive has to be created as a blank drive, then
         be attached to the instance. see the procedure in the references for
         mounting and formatting the drive
@@ -43,7 +45,7 @@ itself - trustable.
 
 ### Mounting drive
 
-Code available to format drive on this page: https://cloud.google.com/compute/docs/disks/add-persistent-disk
+Code available to format drive on this page: [Adding and formatting drives]
 
 #### Properly creating the `/mnt/disks` folder
 
@@ -56,9 +58,5 @@ $ sudo mkdir /mnt/disks
 $ sudo chmod -R a+rx /mnt/disks  # `+x` necessary to enter and perform ls on folder
 ```
 
-### References:
-
-* On disk performance:
-    https://cloud.google.com/compute/docs/disks/performance
-* Adding and formatting drives:
-    https://cloud.google.com/compute/docs/disks/add-persistent-disk
+[On GCE disk performance]: https://cloud.google.com/compute/docs/disks/performance
+[Adding and formatting drives]: https://cloud.google.com/compute/docs/disks/add-persistent-disk
