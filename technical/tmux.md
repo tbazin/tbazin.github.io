@@ -1,0 +1,18 @@
+# `tmux`
+
+## `tmux-resurrect`
+
+Source: [tmux-resurrect]
+
+An extension to restore panes and programs as saved, even over system reboots.
+
+> `tmux-resurrect` saves all the little details from your tmux environment so it
+can be completely restored after a system restart (or when you feel like it).
+No configuration is required. You should feel like you never quit tmux.
+
+### Key bindings
+
+- `prefix + Ctrl-s` - save
+- `prefix + Ctrl-r` - restore
+
+[tmux-resurrect]: [https://github.com/tmux-plugins/tmux-resurrect/]
