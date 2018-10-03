@@ -7,7 +7,10 @@
     - See this Kaggle competition: https://www.kaggle.com/c/freesound-audio-tagging
     - And this Kaggle Kernel, specific to this dataset (but applying to audio
     data in general): https://www.kaggle.com/fizzbuzz/beginner-s-guide-to-audio-data
-
+* [VocalSet] (Wilkins et al. 2018): "A singing voice dataset consisting of
+10.1 hours of monophonic recorded audio of professional singers demonstrating
+both standard and extended vocal techniques on all 5 vowels."
 
 [Google Audioset]: https://research.google.com/audioset/
 [FSD]: https://datasets.freesound.org/
+[VocalSet]: https://zenodo.org/record/1442513
