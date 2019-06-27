@@ -1,0 +1,75 @@
+# On using `ssh`
+
+## Verbose mode
+
+Option `-v` (can be used multiple times for increasing levels of verbosity) turns on verbose mode for debugging.
+
+## Setting up public-key based authentication on a distant host
+
+1. Generate a local priavte/public key pair using `ssh-keygen -t rsa -b 4096`.
+2. Push local public-key to the server:
+    > `ssh-copy-id -i <path/to/identity-file> user@hostname.example.com`
+
+    (this adds the key to the `~/.ssh/authorized_keys` file)
+
+### Public-key based authentication not working
+
+A possible explanation and solution is given in this blog post: https://www.daveperrett.com/articles/2010/09/14/ssh-authentication-refused/
+
+This can happen if one manually creates the `~/.ssh/authorized_keys` file.
+
+* Error (on host machine, could be found in `/var/log/secure` on host or returned by local `ssh` in verbose mode):
+    > `Authentication refused: bad ownership or modes for directory [remote]:~/.ssh.`
+
+* Solution:
+    > SSH doesn’t like it if your home or ~/.ssh directories have group write permissions. Your home directory should be writable only by you, ~/.ssh should be 700, and authorized_keys should be 600:
+
+    ```bash
+    $ chmod g-w /home/your_user
+    $ chmod 700 /home/your_user/.ssh
+    $ chmod 600 /home/your_user/.ssh/authorized_keys
+    ```
+
+    > You can also get around this by adding StrictModes off to your ssh_config file, but I’d advise against it - fixing permissions is the way to go.
+
+## Proxy-based ssh-ing
+
+See this tutorial: https://doc.fedora-fr.org/wiki/SSH:_Simplifier_une_connexion_passant_par_un_Proxy
+
+* Scenario:
+    - Distant server located at `server-hostname` only accessible/visible on
+    a private network accessed through a proxy-host at `proxy-hostname`
+
+* Edit the local `~/.ssh/config` file with the following set-up:
+
+```text
+Host MYPROXYNAME  # only defines the local name for the host, can be chosen freely
+    Hostname proxy-hostname  # valid host location, DNS or IP address
+    User username-on-proxy  # username used to connect to the proxy
+
+Host MYSERVERNAME  # again, can be chosen freely
+    # HostName not necessary here
+    User username-on-server  # username used to connect to the server from the proxy
+
+    # tells ssh to first proxy through MYPROXYNAME using netcat
+    ProxyCommand ssh MYPROXYNAME nc server-hostname 22
+```
+
+* `ssh MYSERVERNAME` then allows to directly connect to the server.
+    - Can be used to reference the server in other tools (e.g. `rsync`) on the local machine.
+
+## Setting up an SSH tunnel
+
+* Can be useful e.g. to set-up a Tensorboard on a distant cluster and access it
+locally.
+
+* `ssh -N MYHOST -L :local-port:distant-address:distant-port`
+    - `-N` allows to not open a terminal access to the distant machine and
+    just leave the tunnel open.
+    - `-L` specifies the creation of a *L* ocal connection, i.e. a tunnel.
+    - `distant-address` is the address/IP/local 'Host' name of the distant
+    machine ton bind to. This can be (in most cases) `MYHOST`'s address but can
+    more generally be any machine accessible from `MYHOST`.
+### Usage with Tensorboard
+
+* With the tunne
