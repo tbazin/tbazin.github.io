@@ -38,6 +38,9 @@ head_scripts:
     - https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js
     - assets/scripts/katex-renderOnDOMLoaded.js
 
+    # TODO only import this script in local builds
+    - http://localhost:35729/livereload.js
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
