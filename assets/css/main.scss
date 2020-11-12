@@ -8,7 +8,10 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+
 // user-specific overrides
+@import "katex-0.12.0/katex.css";
+
 html {
   font-size: 12px;  // default is 16px
 

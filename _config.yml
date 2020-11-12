@@ -26,7 +26,16 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+kramdown:
+    # we actually use katex, as loaded by the head_scripts below
+    # but GiHub Pages ignores this option and enforces mathjax usage,
+    # so we set this here to reflect this behavior locally
+    math_engine: mathjax
+head_scripts:
+    - https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js
+    - assets/scripts/katex-renderOnDOMLoaded.js
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
