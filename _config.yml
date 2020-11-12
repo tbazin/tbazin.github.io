@@ -73,7 +73,7 @@ plugins:
 
 author:
   name   : "Théis Bazin"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-photo.png"
   bio    : "I'm interested in making interactions with computers for music creation more stimulating."
   links:
       # - label: "Website"
