@@ -1,4 +1,12 @@
-# Notes on the Udacity course _Scalable microservices with Kubernetes_
+---
+title: "Notes on the Udacity course _Scalable microservices with Kubernetes_"
+date: 2018-11-20
+tags:
+  - Kubernetes
+  - cloud
+  - web
+  - Udacity
+---
 
 Link to the [course]
 

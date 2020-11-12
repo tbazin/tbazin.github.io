@@ -1,4 +1,14 @@
-# Automatic Generation of Sound Synthesis Techniques (Garcia 2001)
+---
+title: "_Automatic Generation of Sound Synthesis Techniques_ (Garcia 2001)"
+date: 2018-11-20
+tags:
+  - machine learning
+  - genetic programming
+  - audio
+  - sound synthesis
+  - music
+  - control
+---
 
 _Master's thesis at MIT Media Lab_
 
@@ -19,9 +29,9 @@ The thesis proposes a way to explore the space of functional forms using
 Genetic Programming, given a set of inputs (e.g. $A(t), f(t)$) and an expected
 target output. The internal parameters are optimized within a sub-loop using e.g. gradient descent on the selected functional forms ("Lamarckian evolution").
 
-A system doing this is developed, based on custom-designed sound engine.
+A system doing this is developed, based on a custom-designed sound engine.
 
-Some fitness function are proposed.
+Some fitness functions are proposed.
 
 ## Outcomes
 

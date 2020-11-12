@@ -1,4 +1,12 @@
-# `zsh` / `oh-my-zsh`
+---
+title: "On using `zsh` / `oh-my-zsh`"
+date: 2017-11-16
+tags:
+  - zsh
+  - oh-my-zsh
+  - Unix
+  - command line
+---
 
 ## Notes on installing `oh-my-zsh` on GCE instances
 

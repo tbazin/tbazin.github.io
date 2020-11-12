@@ -1,4 +1,12 @@
-# Notes on training RNNs
+---
+title: "Notes on training RNNs"
+date: 2017-11-15
+tags:
+  - machine learning
+  - training
+  - models
+  - RNNS
+---
 
 ## Sliding window and BPTT
 
