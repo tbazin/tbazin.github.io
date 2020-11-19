@@ -6,6 +6,7 @@ tags:
   - oh-my-zsh
   - Unix
   - command line
+toc: true
 ---
 
 ## Notes on installing `oh-my-zsh` on GCE instances
